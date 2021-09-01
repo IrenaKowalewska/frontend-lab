@@ -21,24 +21,24 @@ export const visualizerApp = () => {
   }
 
   const drawJSONTree = (data) => {
-      const type = Array.isArray(data) ? `[ ]`: `{ }`;
+      const type = _.isArray(data) ? `[ ]`: `{ }`;
       const result = [`<div class="main-elem">Big Object: ${type}`];
       result.push(drawElementsTree(data));
-      resultElem.innerHTML = result.join('');
+      resultElem.innerHTML = _.join(result, '');
       const dataElem = document.querySelectorAll('.data-elem');
-      dataElem.forEach(elem => {
-          elem.addEventListener('click', (event) => {
-              event.stopImmediatePropagation();
-              elem.classList.toggle('hide');
-          });
-      })
+      _.forEach(dataElem, elem => {
+        elem.addEventListener('click', (event) => {
+            event.stopImmediatePropagation();
+            elem.classList.toggle('hide');
+        });
+      });
   }
 
   const drawElementsTree = (data) => {
       const result = [`<div class="wrapper">`];
-      for (let [key, value] of Object.entries(data)) {
+      for (let [key, value] of _.toPairs(data)) {
           if (typeof value === 'object') {
-              const type = Array.isArray(value) ? `[ ]`: `{}`;
+              const type = _.isArray(value) ? `[ ]`: `{}`;
               result.push(`<div class="data-elem">${key} ${type}:`);
               result.push(drawElementsTree(value));
               result.push(`</div>`)
@@ -52,7 +52,7 @@ export const visualizerApp = () => {
           }
       }
       result.push('</div>');
-      return result.join('');
+      return _.join(result, '');
   }
 
   const addValueColor = (value) => {
