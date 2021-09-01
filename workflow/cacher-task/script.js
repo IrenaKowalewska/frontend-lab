@@ -13,7 +13,7 @@ class Cacher {
             if (hashKey in this.cacheResult) {
                 return `${this.cacheResult[hashKey]} (from cache)`;
             } else {
-                let result = fn(math.bignumber(...args));
+                let result = fn(...args);
                 this.cacheResult[hashKey] = result;
                 return result;
             }
@@ -32,6 +32,11 @@ const showResult = () => {
     input.value = '';
 }
 
+const factorialFn = (num) => {
+    const result = math.factorial(math.bignumber(num));
+    return result;
+}
+
 const cacher = new Cacher();
-const cachedFactorial = cacher.withCache(math.factorial);
+const cachedFactorial = cacher.withCache(factorialFn);
 calcBtn.addEventListener('click', showResult);
