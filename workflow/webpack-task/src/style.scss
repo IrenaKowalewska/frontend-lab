@@ -10,3 +10,166 @@ body {
   font-size: 16px;
   color: #fff;
 }
+
+.container {
+  max-width: 1400px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.header, .footer {
+  padding: 20px 0;
+  height: 80px;
+  background-color:#4a148c ;
+}
+
+.title {
+  font-size: 35px;
+  color: gray;
+  text-align: center;
+}
+
+.main {
+  height: calc(100vh - 160px);
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 0;
+}
+
+.content-title {
+  padding: 5px;
+  background-color: #6a1b9a;
+  font-size: 25px;
+  text-align: center;
+}
+
+.textarea-block {
+  padding: 10px;
+  width: 42%;
+  height: calc(100vh - 160px - 120px);
+}
+
+textarea {
+  padding: 10px;
+  resize: none;
+  font-size: 18px;
+  height: 90%;
+  width: 100%;
+}
+
+.result-block {
+  padding: 10px;
+  width: 42%;
+  height: calc(100vh - 160px - 120px);
+  font-size: 18px;
+}
+
+.result {
+  overflow-y: scroll;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid gray;
+  color: gray;
+  height: 90%;
+  width: 100%;
+}
+
+.build-button {
+  padding: 10px;
+  font-size: 18px;
+  background-color:#6a1b9a;
+  color: #ffffff;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  transition: all .8s;
+  cursor: pointer;
+  &:hover {
+    background-color: #ba68c8;
+  }
+}
+
+.main-elem {
+  padding-left: 20px;
+  color: indigo;
+}
+
+.data-elem {
+  padding-left: 30px;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 15px;
+    border: 5px solid transparent;
+    border-top: 7px solid #ba68c8;
+    cursor: pointer;
+  }
+  &.hide {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 15px;
+      border: 5px solid transparent;
+      border-left: 7px solid #ba68c8;
+      cursor: pointer;
+    }
+    & > * {
+      display: none;
+    }
+  }
+}
+
+.simple-elem {
+  padding-left: 30px;
+  position: relative;
+}
+
+.green-color {
+  color: #26a69a;
+}
+
+.blue-color {
+  color: #01579b;
+}
+
+.red-color {
+  color: #b71c1c;
+}
+
+.yellow-color {
+  color: #f9a825;
+}
+
+.default-color {
+  color: indigo;
+}
+
+
+@media screen and (max-width: 700px) {
+  .content {
+    flex-direction: column;
+  }
+  .textarea-block {
+    width: 90%;
+    height: 30vh;
+    margin-bottom: 10px;
+  }
+
+  .result-block {
+    width: 90%;
+    height: 30vh;
+  }
+
+  .build-button {
+    position: absolute;
+    top: 85px;
+    left: 0;
+  }
+}
