@@ -22,7 +22,7 @@ class Cacher {
 }
 
 const showResult = () => {
-    const inputValue = input.value;
+    const inputValue = +input.value;
     if (!inputValue) {
         resultBlock.textContent = 'Enter number';
         return false
