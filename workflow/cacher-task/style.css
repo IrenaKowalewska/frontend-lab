@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.app-title {
+    text-align: center;
+    font-size: 35px;
+    color: gray;
+    font-weight: 700;
+}
+
+.calc-block {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 10px;
+}
+.calc-input {
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid gray;
+}
+
+.calc-input:focus {
+    border: 1px solid green;
+}
+
+.calc-btn {
+    padding: 5px;
+    color: #fff;
+    background-color: gray;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.result {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 20px;
+}
